@@ -10,8 +10,10 @@ class UserController extends Controller
 {
     public function index(){
 
-        $user = UserModel::findOrFail(1); //berfungsi untuk mencari data pada tabel yang terkait dengan model UserModel berdasarkan primary key, dalam hal ini dengan nilai 1
+        // Ambil jumlah user dengan level_id = 2
+        $userCount = UserModel::where('level_id', 2)->count();
 
-        return view('user', ['data' => $user]);
+        // Kirim data ke view
+        return view('user', ['data' => $userCount]);
     }   
 }
