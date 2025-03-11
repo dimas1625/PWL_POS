@@ -10,8 +10,7 @@ class UserController extends Controller
 {
     public function index(){
 
-        $user = UserModel::findOr(20, ['username', 'nama'], function () { abort(404);
-        });
+        $user = UserModel::findOrFail(1); //berfungsi untuk mencari data pada tabel yang terkait dengan model UserModel berdasarkan primary key, dalam hal ini dengan nilai 1
 
         return view('user', ['data' => $user]);
     }   
