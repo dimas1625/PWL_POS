@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('t_penjualan_detail', function (Blueprint $table) {
-            $table->id('detail_id'); // Primary key: detail_id (bigint(20) unsigned)
             $table->unsignedBigInteger('penjualan_id'); // Foreign key: penjualan_id (bigint(20) unsigned)
             $table->unsignedBigInteger('barang_id'); // Foreign key: barang_id (bigint(20) unsigned)
             $table->integer('harga'); // harga: int(11)
