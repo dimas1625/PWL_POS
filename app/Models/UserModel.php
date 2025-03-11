@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class UserModel extends Model
 {
-    use HasFactory;
-
-    protected $table = 'm_user'; // Mendefinisikan nama tabel yang digunakan oleh model ini
-    protected $primaryKey = 'user_id'; // Mendefinisikan primary key dari tabel yang digunakan
-
+    // Jika nama tabel di database adalah "m_user"
+    protected $table = 'm_user';
     
-    protected $fillable = ['level_id', 'username', 'nama', 'password'];
+    // Jika primary key tabel adalah "user_id"
+    protected $primaryKey = 'user_id';
+
+    // Tentukan field yang boleh di-mass assign
+    protected $fillable = ['username', 'nama', 'level_id', 'password'];
 }
