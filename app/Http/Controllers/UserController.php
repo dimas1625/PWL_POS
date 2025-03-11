@@ -11,8 +11,12 @@ class UserController extends Controller
     public function index(){
 
         $manager = UserModel::firstOrCreate(
-            ['username' => 'manager'],
-            ['nama'     => 'Manager',]
+            [
+            'username' => 'manager22',
+            'nama'     => 'Manager Duas Dua',
+            'password' => Hash::make('12345'),
+            'level_id' => 2
+            ]
         );
 
         // Kirim data ke view
